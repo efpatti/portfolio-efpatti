@@ -2,10 +2,10 @@
 import { useState, useEffect } from "react";
 import { MdCloseFullscreen, MdMenu } from "react-icons/md";
 import { motion } from "framer-motion";
-import CrookedLine from "./CrookedLine"; // Certifique-se de que o caminho esteja correto
+import CrookedLine from "./CrookedLine";
 import Image from "next/image";
 import Logo from "@/img/efpatti.png";
-import { usePathname } from "next/navigation"; // Import usePathname
+import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
  { name: "Início", href: "/" },
@@ -16,17 +16,16 @@ const NAV_ITEMS = [
 
 const Navbar: React.FC = () => {
  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
- const [activeIndex, setActiveIndex] = useState<number | null>(null); // Novo estado para índice ativo
- const pathname = usePathname(); // Pega o pathname atual
+ const [activeIndex, setActiveIndex] = useState<number | null>(null);
+ const pathname = usePathname();
  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
- // Efeito para setar o índice ativo baseado no pathname
  useEffect(() => {
   const currentNavItem = NAV_ITEMS.find((item) => item.href === pathname);
   if (currentNavItem) {
    const index = NAV_ITEMS.indexOf(currentNavItem);
-   setActiveIndex(index); // Setar o índice ativo baseado no pathname
-   setHoveredIndex(index); // Manter o índice de hover
+   setActiveIndex(index);
+   setHoveredIndex(index);
   }
  }, [pathname]);
 
@@ -38,10 +37,10 @@ const Navbar: React.FC = () => {
     <LogoSection />
     <MobileMenuButton isOpen={isMenuOpen} onToggle={toggleMenu} />
     <DesktopNav
-     items={NAV_ITEMS} // Passa os itens da navbar dinamicamente
+     items={NAV_ITEMS}
      hoveredIndex={hoveredIndex}
      onHover={setHoveredIndex}
-     activeIndex={activeIndex} // Passa o índice ativo para o DesktopNav
+     activeIndex={activeIndex}
     />
    </div>
    {isMenuOpen && <MobileNav items={NAV_ITEMS} onClose={toggleMenu} />}
@@ -69,7 +68,7 @@ const MobileMenuButton: React.FC<{ isOpen: boolean; onToggle: () => void }> = ({
 );
 
 const DesktopNav: React.FC<{
- items: { name: string; href: string }[]; // Aceita itens da navbar dinamicamente
+ items: { name: string; href: string }[];
  activeIndex: number | null;
  hoveredIndex: number | null;
  onHover: (index: number | null) => void;
@@ -81,7 +80,7 @@ const DesktopNav: React.FC<{
     item={item}
     index={index}
     hoveredIndex={hoveredIndex}
-    activeIndex={activeIndex} // Passa o índice ativo para o NavItem
+    activeIndex={activeIndex}
     onHover={onHover}
    />
   ))}
@@ -94,26 +93,32 @@ const NavItem: React.FC<{
  hoveredIndex: number | null;
  activeIndex: number | null;
  onHover: (index: number | null) => void;
-}> = ({ item, index, hoveredIndex, activeIndex, onHover }) => (
- <motion.a
-  href={item.href}
-  className={`nav-link ${
-   hoveredIndex === index || activeIndex === index
-    ? "text-transparent  bg-gradient-to-r from-blue-500 to-purple-500 inline-block bg-clip-text"
-    : ""
-  }`}
-  onMouseEnter={() => onHover(index)}
-  onMouseLeave={() => onHover(null)}
- >
-  <h1>{item.name}</h1>
-  <div className="w-[95px] h-[9px]">
-   <CrookedLine animate={hoveredIndex === index || activeIndex === index} />
-  </div>
- </motion.a>
-);
+}> = ({ item, index, hoveredIndex, activeIndex, onHover }) => {
+ const isActive = hoveredIndex === index || activeIndex === index;
+
+ return (
+  <motion.a
+   href={item.href}
+   className={`transition duration-200 ${
+    isActive
+     ? "text-transparent bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text"
+     : ""
+   }`}
+   onMouseEnter={() => onHover(index)}
+   onMouseLeave={() => onHover(null)}
+  >
+   <div className="inline-flex flex-col items-center">
+    <span className="text-lg font-medium">{item.name}</span>
+    <div className="h-[9px] w-full">
+     <CrookedLine animate={isActive} />
+    </div>
+   </div>
+  </motion.a>
+ );
+};
 
 const MobileNav: React.FC<{
- items: { name: string; href: string }[]; // Aceita itens da navbar dinamicamente
+ items: { name: string; href: string }[];
  onClose: () => void;
 }> = ({ items, onClose }) => (
  <div className="lg:hidden flex flex-col items-end p-8 bg-neutral-950 h-screen w-2/3 fixed top-0 right-0 z-40">
