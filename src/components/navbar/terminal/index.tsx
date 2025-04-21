@@ -42,7 +42,10 @@ const Terminal: React.FC = () => {
     return;
    }
 
-   if (target === "..") {
+   // Remove a barra, se presente, para a busca dos diretórios
+   const normalizedTarget = target.replace("/", "").toLowerCase();
+
+   if (normalizedTarget === "..") {
     // Retorna ao diretório anterior
     setCurrentDir("#inicio"); // Voltando à raiz
     dispatch(setSection({ name: "Início", href: "#inicio" }));
@@ -51,7 +54,7 @@ const Terminal: React.FC = () => {
    }
 
    const match = NAV_ITEMS.find(
-    (item) => item.href.replace("#", "").toLowerCase() === target.toLowerCase()
+    (item) => item.href.replace("#", "").toLowerCase() === normalizedTarget
    );
 
    if (match) {
