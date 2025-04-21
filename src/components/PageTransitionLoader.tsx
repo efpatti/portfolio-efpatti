@@ -1,25 +1,44 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
 import { GiBatMask } from "react-icons/gi";
+import { RootState } from "@/store";
 
 const MIN_LOADING_TIME = 2000; // 2 segundos
 
 export default function PageTransitionLoader() {
- const pathname = usePathname();
+ const sectionName = useSelector(
+  (state: RootState) => state.section.sectionName
+ );
  const [isVisible, setIsVisible] = useState(false);
+ const [startLoading, setStartLoading] = useState(false);
 
  useEffect(() => {
-  setIsVisible(true);
+  if (!sectionName) return; // Não faz nada se não houver seção
 
+  setStartLoading(true); // Começa o "loading"
+  setIsVisible(true); // Torna o loader visível imediatamente
+
+  // Quando o "loading" começa, inicia o timer para garantir o tempo mínimo
   const timeout = setTimeout(() => {
-   setIsVisible(false);
+   setStartLoading(false); // Fecha o loader após o tempo mínimo
   }, MIN_LOADING_TIME);
 
-  return () => clearTimeout(timeout);
- }, [pathname]);
+  return () => clearTimeout(timeout); // Limpa o timeout caso o componente seja desmontado
+ }, [sectionName]);
+
+ useEffect(() => {
+  if (!startLoading) {
+   // Se o loading não estiver mais ativo, espera mais um tempo para a animação de saída
+   const timeout = setTimeout(() => {
+    setIsVisible(false); // Esconde o loader após o tempo mínimo
+   }, 300); // Espera a animação de saída do loader
+
+   return () => clearTimeout(timeout); // Limpa o timeout da animação de saída
+  }
+ }, [startLoading]);
 
  return (
   <AnimatePresence>
@@ -41,6 +60,7 @@ export default function PageTransitionLoader() {
       <GiBatMask className="text-9xl text-black drop-shadow-lg animate-pulse" />
       <h1 className="font-bold mt-4">Enzo Ferracini</h1>
       <p className="text-lg mt-2">Desenvolvedor Web</p>
+      <p className="mt-4 text-xl font-semibold">{sectionName}</p>
      </motion.div>
     </motion.div>
    )}

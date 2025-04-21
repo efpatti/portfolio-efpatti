@@ -8,6 +8,7 @@ type Props = {
  hoveredIndex: number | null;
  activeIndex: number | null;
  onHover: (index: number | null) => void;
+ onNavClick: (sectionName: string) => void; // Adicionando o tipo para onNavClick
 };
 
 const DesktopNav: React.FC<Props> = ({
@@ -15,6 +16,7 @@ const DesktopNav: React.FC<Props> = ({
  hoveredIndex,
  activeIndex,
  onHover,
+ onNavClick,
 }) => (
  <div className="hidden lg:flex items-center gap-6">
   {items.map((item, index) => (
@@ -25,6 +27,7 @@ const DesktopNav: React.FC<Props> = ({
     hoveredIndex={hoveredIndex}
     activeIndex={activeIndex}
     onHover={onHover}
+    onNavClick={onNavClick} // Passando a função onNavClick para o NavItem
    />
   ))}
  </div>

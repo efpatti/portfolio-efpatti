@@ -3,7 +3,6 @@
 import { Provider } from "react-redux";
 import store from "@/store";
 import Navbar from "@/components/Navbar";
-import PageTransitionLoader from "@/components/PageTransitionLoader"; // ⬅️ Importar aqui
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 
@@ -29,7 +28,6 @@ export default function RootLayout({
    <html lang="pt-br" className={`${inter.variable} ${sora.variable}`}>
     <body>
      <Navbar />
-     <PageTransitionLoader /> {/* ⬅️ Adicionado aqui */}
      <main>{children}</main>
     </body>
    </html>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion"; // Corrigido de "motion/react" para "framer-motion"
 import CrookedLine from "@/components/CrookedLine";
 import { NavItemType } from "../types";
 
@@ -10,6 +10,7 @@ type Props = {
  hoveredIndex: number | null;
  activeIndex: number | null;
  onHover: (index: number | null) => void;
+ onNavClick: (sectionName: string) => void; // Adicionando a prop onNavClick
 };
 
 const NavItem: React.FC<Props> = ({
@@ -18,6 +19,7 @@ const NavItem: React.FC<Props> = ({
  hoveredIndex,
  activeIndex,
  onHover,
+ onNavClick,
 }) => {
  const isActive = activeIndex === index;
  const isHovered = hoveredIndex === index;
@@ -36,6 +38,7 @@ const NavItem: React.FC<Props> = ({
     className={`font-bold font-sora transition-all duration-300 ease-in-out ${
      isActive || isHovered ? "text-yellow-600" : "text-slate-400"
     }`}
+    onClick={() => onNavClick(item.name)} // Chamando a função onNavClick no clique
    >
     <span className="text-lg">{item.name}</span>
     <div className="h-[9px] w-full">
