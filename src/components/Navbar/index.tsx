@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
  };
 
  return (
-  <nav className="relative fixed inset-x-0 top-0 z-50 w-full bg-neutral-950 shadow-md text-slate-400 p-3">
+  <nav className="fixed inset-x-0 top-0 z-50 w-full bg-neutral-950 shadow-md text-slate-400 p-3">
    <PageTransitionLoader /> {/* Vai ler direto do Redux */}
    <div className="flex items-center justify-between lg:justify-center gap-6 p-2 max-w-6xl mx-auto w-full">
     <div className="flex-1">

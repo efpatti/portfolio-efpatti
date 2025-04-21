@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { GiBatMask } from "react-icons/gi";
 import { RootState } from "@/store";
 
-const MIN_LOADING_TIME = 2000; // 2 segundos
+const MIN_LOADING_TIME = 1000;
 
 export default function PageTransitionLoader() {
  const sectionName = useSelector(
