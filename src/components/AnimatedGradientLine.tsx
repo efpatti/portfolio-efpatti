@@ -1,4 +1,4 @@
-import { motion, useMotionValue, animate } from "framer-motion";
+import { motion, useMotionValue, animate } from "motion/react";
 import React, { useEffect } from "react";
 
 // Array of batman-inspired colors (dark tones with yellow)
