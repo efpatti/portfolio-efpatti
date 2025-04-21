@@ -3,12 +3,13 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { useDispatch } from "react-redux";
 import { MdTerminal } from "react-icons/md";
+import Terminal from "../Terminal"; // Importando o componente Terminal
 
 const MyDialogButton: React.FC = () => {
  const dispatch = useDispatch();
 
  const handleOpen = () => {
-  dispatch({ type: "dialog/open" }); // Exemplo se quiser usar Redux pra controlar estado global
+  dispatch({ type: "dialog/open" }); // Abre o diálogo via Redux
  };
 
  return (
@@ -28,11 +29,8 @@ const MyDialogButton: React.FC = () => {
      <Dialog.Description className="text-sm mb-4">
       Digite um comando para navegar.
      </Dialog.Description>
-     {/* Conteúdo aqui, como um terminal fake */}
-     <input
-      className="w-full p-2 rounded bg-neutral-800 text-slate-100"
-      placeholder="cd /about"
-     />
+     {/* Exibindo o terminal */}
+     <Terminal />
     </Dialog.Content>
    </Dialog.Portal>
   </Dialog.Root>
