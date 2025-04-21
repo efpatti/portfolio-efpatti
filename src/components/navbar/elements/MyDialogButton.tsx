@@ -17,11 +17,12 @@ const MyDialogButton: React.FC = () => {
    <Dialog.Trigger asChild>
     <button
      onClick={handleOpen}
-     className="text-slate-400 p-2 rounded hover:text-yellow-600 transition cursor-pointer"
+     className="text-slate-400 p-2 rounded hover:text-yellow-600 transition cursor-pointer focus:outline-none"
     >
      <MdTerminal size={24} />
     </button>
    </Dialog.Trigger>
+
    <Dialog.Portal>
     <Dialog.Overlay className="fixed inset-0 bg-black/60" />
     <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-neutral-900 p-6 rounded-xl w-[90%] max-w-md text-slate-100 shadow-lg">
