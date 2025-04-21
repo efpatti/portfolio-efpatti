@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
 
  return (
   <nav className="fixed inset-x-0 top-0 z-50 w-full bg-neutral-950 shadow-sm shadow-slate-200 text-slate-400">
-   <div className="flex items-center justify-between p-4 max-w-6xl mx-auto">
+   <div className="flex items-center justify-between p-2 max-w-6xl mx-auto">
     <LogoSection />
     <MobileMenuButton isOpen={isMenuOpen} onToggle={toggleMenu} />
     <DesktopNav
@@ -114,13 +114,13 @@ const NavItem: React.FC<{
   >
    <motion.a
     href={item.href}
-    className={`font-semibold transition-all duration-300 ease-in-out ${
+    className={`font-bold font-sora transition-all duration-300 ease-in-out ${
      isActive || isHovered
       ? "text-yellow-400" // Texto amarelo quando hoverado ou ativo
       : "text-slate-400"
     }`}
    >
-    <span className="text-lg font-medium">{item.name}</span>
+    <span className="text-xl">{item.name}</span>
     <div className="h-[9px] w-full">
      <CrookedLine animate={isActive || isHovered} />
     </div>
