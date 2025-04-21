@@ -2,7 +2,8 @@
 
 import { Provider } from "react-redux";
 import store from "@/store";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbar";
+import { HashListener } from "@/components/hash_listener";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 
@@ -27,6 +28,7 @@ export default function RootLayout({
   <Provider store={store}>
    <html lang="pt-br" className={`${inter.variable} ${sora.variable}`}>
     <body suppressHydrationWarning>
+     <HashListener />
      <Navbar />
      <main>{children}</main>
     </body>

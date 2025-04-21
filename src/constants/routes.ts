@@ -1,4 +1,4 @@
-import { NavItemType } from "./types";
+import { NavItemType } from "@/types/nav";
 
 export const NAV_ITEMS: NavItemType[] = [
  { name: "Início", href: "#inicio" },

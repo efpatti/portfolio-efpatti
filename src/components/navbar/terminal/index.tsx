@@ -3,7 +3,7 @@
 import TerminalInput from "./TerminalInput";
 import TerminalOutput from "./TerminalOutput";
 import { useState } from "react";
-import { NAV_ITEMS } from "../constants"; // Importa os itens de navegação
+import { NAV_ITEMS } from "@/constants/routes"; // Importa os itens de navegação
 
 const Terminal: React.FC = () => {
  const [output, setOutput] = useState<string[]>([]); // Estado para armazenar a saída do terminal

@@ -1,12 +1,12 @@
 "use client";
 
 import { MdCloseFullscreen } from "react-icons/md";
-import { NavItemType } from "../types";
+import { NavItemType } from "@/types/nav";
 
 type Props = {
  items: NavItemType[];
  onClose: () => void;
- onNavClick: (sectionName: string) => void;
+ onNavClick: (sectionName: string, sectionHref: string) => void; // Atualizando a assinatura para incluir sectionHref
 };
 
 const MobileNav: React.FC<Props> = ({ items, onClose, onNavClick }) => (
@@ -25,7 +25,7 @@ const MobileNav: React.FC<Props> = ({ items, onClose, onNavClick }) => (
      href={item.href}
      className="text-slate-100 py-2 text-lg"
      onClick={() => {
-      onNavClick(item.name);
+      onNavClick(item.name, item.href); // Passando name e href
       onClose();
      }}
     >

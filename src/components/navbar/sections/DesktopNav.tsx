@@ -1,20 +1,20 @@
 "use client";
 
 import NavItem from "../elements/NavItem";
-import { NavItemType } from "../types";
+import { NavItemType } from "@/types/nav";
 
 type Props = {
  items: NavItemType[];
  hoveredIndex: number | null;
- activeIndex: number | null;
+ activeSection: string;
  onHover: (index: number | null) => void;
- onNavClick: (sectionName: string) => void; // Adicionando o tipo para onNavClick
+ onNavClick: (sectionName: string, sectionHref: string) => void; // Atualizando a assinatura para incluir sectionHref
 };
 
 const DesktopNav: React.FC<Props> = ({
  items,
  hoveredIndex,
- activeIndex,
+ activeSection,
  onHover,
  onNavClick,
 }) => (
@@ -25,7 +25,7 @@ const DesktopNav: React.FC<Props> = ({
     item={item}
     index={index}
     hoveredIndex={hoveredIndex}
-    activeIndex={activeIndex}
+    activeSection={activeSection}
     onHover={onHover}
     onNavClick={onNavClick} // Passando a função onNavClick para o NavItem
    />

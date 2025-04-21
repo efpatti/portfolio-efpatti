@@ -28,7 +28,7 @@ const CrookedLine = ({ animate }: { animate: boolean }) => {
    opacity: 1,
    pathLength: 1,
    strokeDasharray: "500",
-   strokeDashoffset: "0",
+   strokeDashoffset: "1",
    transition: {
     opacity: { duration: 0.5, ease: "easeInOut" },
     pathLength: { duration: 0.5, ease: "easeInOut" },

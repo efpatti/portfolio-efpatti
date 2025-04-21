@@ -3,13 +3,13 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { useDispatch } from "react-redux";
 import { MdTerminal } from "react-icons/md";
-import Terminal from "../Terminal"; // Importando o componente Terminal
+import Terminal from "../terminal";
 
 const MyDialogButton: React.FC = () => {
  const dispatch = useDispatch();
 
  const handleOpen = () => {
-  dispatch({ type: "dialog/open" }); // Abre o diálogo via Redux
+  dispatch({ type: "dialog/open" });
  };
 
  return (
