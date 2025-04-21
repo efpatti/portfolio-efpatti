@@ -28,7 +28,10 @@ const TerminalInput: React.FC<TerminalInputProps> = ({
 
  return (
   <div className="input-wrapper">
-   <span className="prompt">$ </span>
+   {/* Estilo inline para o cifrão na cor amarela (yellow-600) */}
+   <span className="prompt" style={{ color: "#eab308" }}>
+    ${" "}
+   </span>
    <input
     ref={inputRef}
     className="terminal-input"
