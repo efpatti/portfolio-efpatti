@@ -26,7 +26,7 @@ export default function RootLayout({
  return (
   <Provider store={store}>
    <html lang="pt-br" className={`${inter.variable} ${sora.variable}`}>
-    <body>
+    <body suppressHydrationWarning>
      <Navbar />
      <main>{children}</main>
     </body>

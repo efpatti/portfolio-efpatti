@@ -3,6 +3,8 @@
 import { motion } from "framer-motion"; // Corrigido de "motion/react" para "framer-motion"
 import CrookedLine from "@/components/CrookedLine";
 import { NavItemType } from "../types";
+import { useDispatch } from "react-redux";
+import { setSection } from "@/store/sectionSlice"; // Ação para atualizar o estado da seção
 
 type Props = {
  item: NavItemType;
@@ -21,8 +23,15 @@ const NavItem: React.FC<Props> = ({
  onHover,
  onNavClick,
 }) => {
+ const dispatch = useDispatch(); // Inicializando o dispatch do Redux
  const isActive = activeIndex === index;
  const isHovered = hoveredIndex === index;
+
+ // Atualizando o estado no Redux ao clicar em um item de navegação
+ const handleNavClick = () => {
+  dispatch(setSection(item.name)); // Atualiza a seção ativa no Redux
+  onNavClick(item.name); // Chama a função onNavClick passada como prop
+ };
 
  return (
   <motion.div
@@ -38,7 +47,7 @@ const NavItem: React.FC<Props> = ({
     className={`font-bold font-sora transition-all duration-300 ease-in-out ${
      isActive || isHovered ? "text-yellow-600" : "text-slate-400"
     }`}
-    onClick={() => onNavClick(item.name)} // Chamando a função onNavClick no clique
+    onClick={handleNavClick} // Chamando a função handleNavClick
    >
     <span className="text-lg">{item.name}</span>
     <div className="h-[9px] w-full">
