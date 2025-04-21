@@ -60,8 +60,9 @@ const CrookedLine = ({ animate }: { animate: boolean }) => {
      </linearGradient>
     </defs>
 
+    {/* Reta: começa no ponto (2,6) e vai até (124,6) */}
     <motion.path
-     d="M2 6C9.14784 6.42046 16.579 6 24 6C33.7203 6 41.9819 3.51987 51.5 2.05556C65.9624 -0.169424 78.7854 7 93 7"
+     d="M2 6H124"
      variants={pathVariants}
      initial="hidden"
      animate={animate ? "visible" : "invisible"}

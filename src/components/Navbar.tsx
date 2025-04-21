@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { MdCloseFullscreen, MdMenu } from "react-icons/md";
 import { motion } from "framer-motion";
@@ -94,26 +95,37 @@ const NavItem: React.FC<{
  activeIndex: number | null;
  onHover: (index: number | null) => void;
 }> = ({ item, index, hoveredIndex, activeIndex, onHover }) => {
- const isActive = hoveredIndex === index || activeIndex === index;
+ const isActive = activeIndex === index;
+ const isHovered = hoveredIndex === index;
 
  return (
-  <motion.a
-   href={item.href}
-   className={`font-semibold transition duration-200 ${
-    isActive
-     ? "text-transparent bg-gradient-to-r from-slate-600 via-yellow-400 to-yellow-800 bg-clip-text"
-     : ""
-   }`}
-   onMouseEnter={() => onHover(index)}
-   onMouseLeave={() => onHover(null)}
+  <motion.div
+   className="inline-flex flex-col items-center"
+   onHoverStart={() => onHover(index)} // Inicia a animação no hover
+   onHoverEnd={() => onHover(null)} // Finaliza a animação no fim do hover
+   initial={{ opacity: 0.6 }} // Começa com opacidade menor
+   animate={{
+    opacity: isHovered || isActive ? 1 : 0.6,
+   }} // Transição de opacidade suave
+   transition={{
+    duration: 0.3,
+    ease: [0.25, 0.8, 0.25, 1], // Usando uma curva de Bézier personalizada
+   }}
   >
-   <div className="inline-flex flex-col items-center">
+   <motion.a
+    href={item.href}
+    className={`font-semibold transition-all duration-300 ease-in-out ${
+     isActive || isHovered
+      ? "text-yellow-400" // Texto amarelo quando hoverado ou ativo
+      : "text-slate-400"
+    }`}
+   >
     <span className="text-lg font-medium">{item.name}</span>
     <div className="h-[9px] w-full">
-     <CrookedLine animate={isActive} />
+     <CrookedLine animate={isActive || isHovered} />
     </div>
-   </div>
-  </motion.a>
+   </motion.a>
+  </motion.div>
  );
 };
 
