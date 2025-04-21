@@ -33,12 +33,12 @@ function AuroraGradientAnimated() {
     }}
     style={{
      backgroundImage: `repeating-linear-gradient(
-              90deg,
-              ${COLORS_TOP[0]} 0%,  /* Amarelo claro */
-              ${COLORS_TOP[1]} 10%, /* Amarelo mais forte */
-              ${COLORS_TOP[2]} 20%, /* Laranja */
-              ${COLORS_TOP[3]} 30%  /* Amarelo dourado */
-            )`, // Usando os tons de amarelo e laranja
+                90deg,
+                ${COLORS_TOP[0]} 0%,  /* Amarelo claro */
+                ${COLORS_TOP[1]} 10%, /* Amarelo mais forte */
+                ${COLORS_TOP[2]} 20%, /* Laranja */
+                ${COLORS_TOP[3]} 30%  /* Amarelo dourado */
+              )`, // Usando os tons de amarelo e laranja
      backgroundSize: "200% 100%", // Faz o padrão de fundo cobrir mais do que o necessário
     }}
    />

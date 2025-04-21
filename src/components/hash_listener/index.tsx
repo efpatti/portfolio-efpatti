@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setSection } from "@/store/sectionSlice";
-import { NAV_ITEMS } from "@/constants/routes"; // Certifique-se de importar NAV_ITEMS
+import { NAV_ITEMS } from "@/constants/routes";
 
 export function HashListener() {
  const dispatch = useDispatch();
