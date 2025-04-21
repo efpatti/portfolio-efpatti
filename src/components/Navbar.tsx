@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
  return (
-  <nav className="fixed inset-x-0 top-0 z-50 w-full bg-neutral-900 text-slate-400">
+  <nav className="fixed inset-x-0 top-0 z-50 w-full bg-neutral-950 shadow-sm shadow-slate-200 text-slate-400">
    <div className="flex items-center justify-between p-4 max-w-6xl mx-auto">
     <LogoSection />
     <MobileMenuButton isOpen={isMenuOpen} onToggle={toggleMenu} />
