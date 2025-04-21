@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { GiBatMask } from "react-icons/gi";
 import { RootState } from "@/store";
 
-const MIN_LOADING_TIME = 1000;
+const MIN_LOADING_TIME = 500;
 
 export default function PageTransitionLoader() {
  const sectionName = useSelector(
@@ -58,9 +58,7 @@ export default function PageTransitionLoader() {
       className="text-2xl font-semibold flex flex-col justify-center items-center"
      >
       <GiBatMask className="text-9xl text-black drop-shadow-lg animate-pulse" />
-      <h1 className="font-bold mt-4">Enzo Ferracini</h1>
-      <p className="text-lg mt-2">Desenvolvedor Web</p>
-      <p className="mt-4 text-xl font-semibold">{sectionName}</p>
+      <p className="mt-4 text-5xl font-soro font-extrabold">{sectionName}</p>
      </motion.div>
     </motion.div>
    )}
