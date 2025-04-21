@@ -1,7 +1,11 @@
-import type { Metadata } from "next";
+"use client";
+
+import { Provider } from "react-redux";
+import store from "@/store";
 import Navbar from "@/components/Navbar";
-import "./globals.css";
+import PageTransitionLoader from "@/components/PageTransitionLoader"; // ⬅️ Importar aqui
 import { Inter, Sora } from "next/font/google";
+import "./globals.css";
 
 const inter = Inter({
  subsets: ["latin"],
@@ -15,22 +19,20 @@ const sora = Sora({
  display: "swap",
 });
 
-export const metadata: Metadata = {
- title: "Portfólio | Enzo Ferracini",
- description: "Desenvolvedor Web",
-};
-
 export default function RootLayout({
  children,
 }: Readonly<{
  children: React.ReactNode;
 }>) {
  return (
-  <html lang="pt-br" className={`${inter.variable} ${sora.variable}`}>
-   <body>
-    <Navbar />
-    <main>{children}</main>
-   </body>
-  </html>
+  <Provider store={store}>
+   <html lang="pt-br" className={`${inter.variable} ${sora.variable}`}>
+    <body>
+     <Navbar />
+     <PageTransitionLoader /> {/* ⬅️ Adicionado aqui */}
+     <main>{children}</main>
+    </body>
+   </html>
+  </Provider>
  );
 }

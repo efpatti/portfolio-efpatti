@@ -37,7 +37,7 @@ const NavItem: React.FC<Props> = ({
      isActive || isHovered ? "text-yellow-600" : "text-slate-400"
     }`}
    >
-    <span className="text-xl">{item.name}</span>
+    <span className="text-lg">{item.name}</span>
     <div className="h-[9px] w-full">
      <CrookedLine animate={isActive || isHovered} />
     </div>

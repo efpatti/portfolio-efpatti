@@ -16,3 +16,89 @@ body {
  background-color: var(--background);
  color: var(--foreground);
 }
+
+/* Terminal Wrapper */
+.terminal-container {
+ background-color: #0a0a0a; /* Background preto */
+ color: #f0f0f0; /* Texto claro */
+ font-family: "JetBrains Mono", monospace; /* Fonte de terminal */
+ border-radius: 10px;
+ padding: 16px;
+ max-width: 90vw;
+ max-height: 70vh;
+ overflow-y: auto;
+ box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.terminal-output {
+ margin-bottom: 10px;
+ padding-bottom: 5px;
+}
+
+.terminal-line {
+ margin: 4px 0;
+ word-wrap: break-word;
+ white-space: pre-wrap;
+}
+
+.input-wrapper {
+ display: flex;
+ align-items: center;
+}
+
+.prompt {
+ color: #64b5f6; /* Cor do prompt */
+ margin-right: 10px;
+}
+
+.terminal-input {
+ background: transparent;
+ border: none;
+ color: #f0f0f0;
+ flex-grow: 1;
+ outline: none;
+ font-family: "JetBrains Mono", monospace;
+ font-size: 1rem;
+}
+
+.terminal-input::placeholder {
+ color: #888;
+}
+
+/* Animações de terminal (opcional) */
+.terminal-container {
+ animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+ 0% {
+  opacity: 0;
+ }
+ 100% {
+  opacity: 1;
+ }
+}
+@layer utilities {
+ .animated-spiral-line {
+  background-image: linear-gradient(
+   90deg,
+   #22c55e,
+   #8b5cf6,
+   #eab308,
+   #22c55e,
+   #8b5cf6,
+   #eab308
+  );
+  background-size: 300% 100%;
+  animation: spiralGradientMove 5s linear infinite;
+ }
+
+ @keyframes spiralGradientMove {
+  0% {
+   background-position: 0% 50%;
+  }
+  100% {
+   background-position: 100% 50%;
+  }
+ }
+}

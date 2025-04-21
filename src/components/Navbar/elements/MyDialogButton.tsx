@@ -17,7 +17,7 @@ const MyDialogButton: React.FC = () => {
    <Dialog.Trigger asChild>
     <button
      onClick={handleOpen}
-     className="text-slate-100 p-2 rounded hover:bg-neutral-800 transition"
+     className="text-slate-400 p-2 rounded hover:text-yellow-600 transition cursor-pointer"
     >
      <MdTerminal size={24} />
     </button>
