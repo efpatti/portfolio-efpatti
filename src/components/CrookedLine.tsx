@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 const CrookedLine = ({ animate }: { animate: boolean }) => {
  const pathVariants = {
   invisible: {
@@ -45,11 +46,20 @@ const CrookedLine = ({ animate }: { animate: boolean }) => {
     xmlns="http://www.w3.org/2000/svg"
    >
     <defs>
-     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style={{ stopColor: "#89CFF0", stopOpacity: 1 }} />
-      <stop offset="100%" style={{ stopColor: "#CF9FFF", stopOpacity: 1 }} />
+     <linearGradient
+      id="grad1"
+      x1="0"
+      y1="0"
+      x2="126"
+      y2="0"
+      gradientUnits="userSpaceOnUse"
+     >
+      <stop offset="0%" style={{ stopColor: "#FFD700", stopOpacity: 1 }} />
+      <stop offset="50%" style={{ stopColor: "#FFA500", stopOpacity: 1 }} />
+      <stop offset="100%" style={{ stopColor: "#1a1a1a", stopOpacity: 1 }} />
      </linearGradient>
     </defs>
+
     <motion.path
      d="M2 6C9.14784 6.42046 16.579 6 24 6C33.7203 6 41.9819 3.51987 51.5 2.05556C65.9624 -0.169424 78.7854 7 93 7"
      variants={pathVariants}
@@ -58,7 +68,7 @@ const CrookedLine = ({ animate }: { animate: boolean }) => {
      stroke="url(#grad1)"
      strokeLinecap="round"
      strokeLinejoin="round"
-     strokeWidth="2"
+     strokeWidth="5"
     />
    </svg>
   </div>

@@ -99,9 +99,9 @@ const NavItem: React.FC<{
  return (
   <motion.a
    href={item.href}
-   className={`transition duration-200 ${
+   className={`font-semibold transition duration-200 ${
     isActive
-     ? "text-transparent bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text"
+     ? "text-transparent bg-gradient-to-r from-slate-600 via-yellow-400 to-yellow-800 bg-clip-text"
      : ""
    }`}
    onMouseEnter={() => onHover(index)}
