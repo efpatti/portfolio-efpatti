@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GiBatMask } from "react-icons/gi";
 
-const MIN_LOADING_TIME = 2000;
+const MIN_LOADING_TIME = 2000; // 2 segundos
 
 export default function PageTransitionLoader() {
  const pathname = usePathname();
@@ -40,6 +40,7 @@ export default function PageTransitionLoader() {
      >
       <GiBatMask className="text-9xl text-black drop-shadow-lg animate-pulse" />
       <h1 className="font-bold mt-4">Enzo Ferracini</h1>
+      <p className="text-lg mt-2">Desenvolvedor Web</p>
      </motion.div>
     </motion.div>
    )}

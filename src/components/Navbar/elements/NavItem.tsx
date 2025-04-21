@@ -34,7 +34,7 @@ const NavItem: React.FC<Props> = ({
    <motion.a
     href={item.href}
     className={`font-bold font-sora transition-all duration-300 ease-in-out ${
-     isActive || isHovered ? "text-yellow-400" : "text-slate-400"
+     isActive || isHovered ? "text-yellow-600" : "text-slate-400"
     }`}
    >
     <span className="text-xl">{item.name}</span>

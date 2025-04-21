@@ -54,8 +54,8 @@ const CrookedLine = ({ animate }: { animate: boolean }) => {
       y2="0"
       gradientUnits="userSpaceOnUse"
      >
-      <stop offset="0%" style={{ stopColor: "#FFD700", stopOpacity: 1 }} />
-      <stop offset="50%" style={{ stopColor: "#FFA500", stopOpacity: 1 }} />
+      <stop offset="0%" style={{ stopColor: "#8C6D1F", stopOpacity: 1 }} />
+      <stop offset="50%" style={{ stopColor: "#5A480F", stopOpacity: 1 }} />
       <stop offset="100%" style={{ stopColor: "#1a1a1a", stopOpacity: 1 }} />
      </linearGradient>
     </defs>
@@ -69,7 +69,7 @@ const CrookedLine = ({ animate }: { animate: boolean }) => {
      stroke="url(#grad1)"
      strokeLinecap="round"
      strokeLinejoin="round"
-     strokeWidth="5"
+     strokeWidth="8"
     />
    </svg>
   </div>
