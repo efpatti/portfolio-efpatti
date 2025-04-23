@@ -1,5 +1,5 @@
-// components/ProjectDetails.tsx
-import { Project } from "./Project";
+// portfolio/layout/ProjectDetails.tsx
+import { Project } from "@/types/Project";
 
 interface Props {
  project: Project;

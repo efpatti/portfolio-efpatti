@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CrookedLine from "@/components/ui/CrookedLine";
+import CrookedLine from "@/components/common/CrookedLine";
 import { NavItemType } from "@/types/nav";
 import { useDispatch } from "react-redux";
 import { setSection } from "@/store/sectionSlice"; // Certifique-se de importar a ação

@@ -1,5 +1,5 @@
-// components/ProjectCard.tsx
-import { Project } from "./Project";
+// portfolio/layout/ProjectCard.tsx
+import { Project } from "@/types/Project";
 import ProjectDetails from "./ProjectDetails";
 import ProjectMentorsInfluences from "./ProjectMentorInfluencers";
 
@@ -17,12 +17,12 @@ const ProjectCard = ({ project }: Props) => (
 
   <div className="mt-6">
    <a
-    href={project.liveLink}
+    href={project.repository}
     target="_blank"
     rel="noopener noreferrer"
     className="text-yellow-400 hover:underline"
    >
-    Ver Projeto ao Vivo
+    Ver
    </a>
   </div>
  </div>

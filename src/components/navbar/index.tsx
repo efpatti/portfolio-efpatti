@@ -12,8 +12,8 @@ import DesktopNav from "./sections/DesktopNav";
 import MobileNav from "./sections/MobileNav";
 import MobileMenuButton from "./elements/MobileMenuButton";
 import MyDialogButton from "./elements/MyDialogButton";
-import AnimatedGradientLine from "@/components/ui/AnimatedGradientLine";
-import PageTransitionLoader from "@/components/ui/PageTransitionLoader";
+import AnimatedGradientLine from "@/components/common/AnimatedGradientLine";
+import PageTransitionLoader from "@/components/common/PageTransitionLoader";
 
 const Navbar: React.FC = () => {
  const { sectionHref, hoveredIndex, setHoveredIndex } = useActiveNav();
