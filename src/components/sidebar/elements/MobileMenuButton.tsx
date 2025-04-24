@@ -1,3 +1,4 @@
+// src/components/sidebar/elements/MobileMenuButton.tsx
 "use client";
 
 import { MdCloseFullscreen, MdMenu } from "react-icons/md";

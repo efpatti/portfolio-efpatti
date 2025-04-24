@@ -1,3 +1,4 @@
+// src/components/common/AnimatedGradientLine.tsx
 import { motion, useMotionValue, animate } from "motion/react";
 import React, { useEffect } from "react";
 

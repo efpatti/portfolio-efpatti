@@ -1,3 +1,4 @@
+// src/constants/routes.ts
 import { NavItemType } from "@/types/nav";
 
 export const NAV_ITEMS: NavItemType[] = [

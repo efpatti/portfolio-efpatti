@@ -1,3 +1,4 @@
+// src/components/sidebar/terminal/index.tsx
 "use client";
 
 import TerminalInput from "./TerminalInput";

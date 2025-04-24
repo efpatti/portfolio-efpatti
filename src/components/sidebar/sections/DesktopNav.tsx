@@ -1,3 +1,4 @@
+// src/components/sidebar/sections/DesktopNav.tsx
 "use client";
 
 import NavItem from "../elements/NavItem";
@@ -18,7 +19,7 @@ const DesktopNav: React.FC<Props> = ({
  onHover,
  onNavClick,
 }) => (
- <div className="hidden lg:flex items-center gap-6">
+ <div className="highlight-el flex flex-col h-full p-4 justify-between items-center gap-2 lg:gap-3 w-full">
   {items.map((item, index) => (
    <NavItem
     key={item.name}
@@ -27,7 +28,7 @@ const DesktopNav: React.FC<Props> = ({
     hoveredIndex={hoveredIndex}
     activeSection={activeSection}
     onHover={onHover}
-    onNavClick={onNavClick} // Passando a função onNavClick para o NavItem
+    onNavClick={onNavClick}
    />
   ))}
  </div>

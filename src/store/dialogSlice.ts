@@ -1,3 +1,4 @@
+// src/store/dialogSlice.ts
 import { createSlice } from "@reduxjs/toolkit";
 
 interface DialogState {

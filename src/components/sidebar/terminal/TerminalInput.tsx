@@ -1,3 +1,4 @@
+// src/components/sidebar/terminal/TerminalInput.tsx
 "use client";
 
 import { useEffect, useRef } from "react";

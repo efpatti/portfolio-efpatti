@@ -1,3 +1,4 @@
+// src/store/index.tsx
 import { configureStore } from "@reduxjs/toolkit";
 import dialogReducer from "./dialogSlice";
 import sectionReducer from "./sectionSlice"; // Import do slice novo

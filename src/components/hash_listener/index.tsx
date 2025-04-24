@@ -1,3 +1,4 @@
+// src/components/hash_listener/index.tsx
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setSection } from "@/store/sectionSlice";

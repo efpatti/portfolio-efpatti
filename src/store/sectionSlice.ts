@@ -1,3 +1,4 @@
+// src/store/sectionSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface SectionState {

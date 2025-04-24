@@ -1,3 +1,4 @@
+// src/components/common/CrookedLine.tsx
 import { motion } from "motion/react";
 
 const CrookedLine = ({ animate }: { animate: boolean }) => {

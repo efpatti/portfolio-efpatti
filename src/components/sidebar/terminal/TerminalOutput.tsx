@@ -1,3 +1,4 @@
+// src/components/sidebar/terminal/TerminalOutput.tsx
 "use client";
 
 interface TerminalOutputProps {

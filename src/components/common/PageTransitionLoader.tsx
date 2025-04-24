@@ -1,3 +1,4 @@
+// src/components/common/PageTransitionLoader.tsx
 "use client";
 
 import { useState, useEffect } from "react";

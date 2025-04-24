@@ -1,3 +1,4 @@
+// src/components/sidebar/elements/NavItem.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -37,7 +38,7 @@ const NavItem: React.FC<Props> = ({
 
  return (
   <motion.div
-   className="inline-flex flex-col items-center"
+   className="inline-flex flex-col items-center justify-center bg-purple-500 highlight-el"
    onHoverStart={() => onHover(index)}
    onHoverEnd={() => onHover(null)}
    initial={{ opacity: 0.6 }}
